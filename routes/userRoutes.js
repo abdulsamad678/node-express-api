@@ -195,24 +195,7 @@ router.get("/", checkAuth, async (req, res) => {
     res.status(500).json({ data: { success: false, message: err.message } });
   }
 });
-//////////////////////////////////////stripe
-// router.post('/payment', checkAuth, async(req,res)=>{
-//     console.log("cccccccccc")
-//     //const customer= await stripe.customers.create()
 
-//     return stripe.customers.create({
-//         email:req.body.token.email,
-//         source:req.body.token.id,
-//     }).then(customer=>{
-//         stripe.charges.create({
-//             amount:req.body.product.price,
-//             receipt_email:req.body.token.email,
-//             name:req.body.product.price,
-//         })
-//     }).then(result=>res.status(200).json(result))
-//     .catch(err=>console.log(err))
-
-//        })
 router.post("/cars", checkAuth, async (req, res) => {
   try {
     let car = new Cars({
